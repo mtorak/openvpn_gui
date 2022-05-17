@@ -45,6 +45,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### GUI Usage
 
 - GUI 1<br>
-![GUI 1](docs/openvpn-gui1.png "GUI 1")<br>
+![GUI 1](./docs/openvpn-gui1.png "GUI 1")<br>
 - GUI 2<br>
-![GUI 2](docs/openvpn-gui2.png "GUI 2")<br>
+![GUI 2](./docs/openvpn-gui2.png "GUI 2")<br>
