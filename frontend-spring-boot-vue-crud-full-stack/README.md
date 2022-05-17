@@ -10,6 +10,15 @@ Note: v17.x or older version should be installed.
 npm install
 ```
 
+## Used modules
+```
+npm install -g @vue/cli
+npm add axios
+npm add vue-router
+
+npm install uuid
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
