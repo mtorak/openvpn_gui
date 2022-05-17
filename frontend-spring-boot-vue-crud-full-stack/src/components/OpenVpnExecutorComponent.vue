@@ -57,6 +57,7 @@
 
 <script>
 import OpenVpnService from "../service/OpenVpnService";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   name: "OpenVpnExecutorComponent",
@@ -68,6 +69,7 @@ export default {
       selectionValue: "",
       submitSelectionDisabled: false,
       feedbackMessage: "",
+      conversationId:""
     };
   },
   updated() {
@@ -83,7 +85,8 @@ export default {
     },
     startOpenVpn() {
       let self = this;
-      OpenVpnService.callStartOpenVpn()
+      self.conversationId = uuidv4();
+      OpenVpnService.callStartOpenVpn(self.conversationId)
         .then((response) => {
           self.outputAreaContent = response.data.responseText;
           self.showOutputArea = true;
@@ -96,7 +99,7 @@ export default {
     },
     stopOpenVpn() {
       let self = this;
-      OpenVpnService.callStopOpenVpn()
+      OpenVpnService.callStopOpenVpn(self.conversationId)
         .then((response) => {
           self.outputAreaContent = response.data.responseText;
           self.showOutputArea = false;
@@ -119,7 +122,7 @@ export default {
       self.feedbackMessage = "";
 
       self.submitSelectionDisabled = true;
-      OpenVpnService.callExecuteSelection(self.selectionValue)
+      OpenVpnService.callExecuteSelection(self.conversationId, self.selectionValue)
         .then((response) => {
           self.outputAreaContent = "\n\n" + response.data.responseText;
           self.submitSelectionDisabled = false;

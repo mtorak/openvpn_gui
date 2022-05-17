@@ -5,16 +5,16 @@ const STOP_OPENVPN_API_URL = `http://localhost:8080/stopOpenVpn`;
 const EXECUTE_SELECTIOON_URL = "http://localhost:8080/executeSelection";
 
 class OpenVpnService {
-    callStartOpenVpn() {
-        return axios.post(START_OPENVPN_API_URL);
+    callStartOpenVpn(conversationId) {
+        return axios.post(`${START_OPENVPN_API_URL}/${conversationId}`);
     }
 
-    callStopOpenVpn() {
-        return axios.post(STOP_OPENVPN_API_URL);
+    callStopOpenVpn(conversationId) {
+        return axios.post(`${STOP_OPENVPN_API_URL}/${conversationId}`);
     }
 
-    callExecuteSelection(selectionValue) {
-        return axios.post(`${EXECUTE_SELECTIOON_URL}/${selectionValue}`);
+    callExecuteSelection(conversationId, selectionValue) {
+        return axios.post(`${EXECUTE_SELECTIOON_URL}/${conversationId}/${selectionValue}`);
     }
 }
 
