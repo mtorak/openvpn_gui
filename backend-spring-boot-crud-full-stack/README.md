@@ -1,7 +1,7 @@
 # openvpn-install GUI için backend
 ## Kullanılan teknojiler
 1. Spring Boot
-2. Jsch http://www.jcraft.com/jsch/
+2. ExpectJ http://expectj.sourceforge.net/
 3. openvpn-install https://github.com/angristan/openvpn-install
 
 ## Detaylar
