@@ -17,21 +17,21 @@ public class OpenVpnResource {
     @Autowired
     private OpenVpnExecutor openVpnExecutor;
 
-    @PostMapping("/startOpenVpn")
-    public ResponseEntity<OpenVpnResponse> startOpenVpn() {
-        OpenVpnResponse openVpnResponse = openVpnExecutor.executeStart();
+    @PostMapping("/startOpenVpn/{conversationId}")
+    public ResponseEntity<OpenVpnResponse> startOpenVpn(@PathVariable String conversationId) {
+        OpenVpnResponse openVpnResponse = openVpnExecutor.executeStart(conversationId);
         return new ResponseEntity<>(openVpnResponse, HttpStatus.OK);
     }
 
-    @PostMapping("/stopOpenVpn")
-    public ResponseEntity<OpenVpnResponse> stopOpenVpn() {
-        OpenVpnResponse openVpnResponse = openVpnExecutor.executeStop();
+    @PostMapping("/executeSelection/{conversationId}/{input}")
+    public ResponseEntity<OpenVpnResponse> executeSelection(@PathVariable String conversationId, @PathVariable String input) {
+        OpenVpnResponse openVpnResponse = openVpnExecutor.executeSelection(conversationId, input);
         return new ResponseEntity<>(openVpnResponse, HttpStatus.OK);
     }
 
-    @PostMapping("/executeSelection/{input}")
-    public ResponseEntity<OpenVpnResponse> executeSelection(@PathVariable String input) {
-        OpenVpnResponse openVpnResponse = openVpnExecutor.executeSelection(input);
+    @PostMapping("/stopOpenVpn/{conversationId}")
+    public ResponseEntity<OpenVpnResponse> stopOpenVpn(@PathVariable String conversationId) {
+        OpenVpnResponse openVpnResponse = openVpnExecutor.executeStop(conversationId);
         return new ResponseEntity<>(openVpnResponse, HttpStatus.OK);
     }
 

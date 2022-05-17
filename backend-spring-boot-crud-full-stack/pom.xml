@@ -28,15 +28,15 @@
             <artifactId>commons-io</artifactId>
             <version>2.11.0</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.jcraft</groupId>-->
-        <!--            <artifactId>jsch</artifactId>-->
-        <!--            <version>0.1.55</version>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>net.sourceforge.expectj</groupId>
             <artifactId>expectj</artifactId>
             <version>2.0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
         </dependency>
 
         <dependency>
