@@ -28,9 +28,6 @@ public class OpenVpnExecutor {
     private Map<String, ExecutionConversation> executionsMap = new HashMap<>();
     private static final Integer SHELL_MAX_LIFE_TIME_MS = 4 * 60 * 1000;
 
-
-    private Spawn globalShell;
-
     private static final String STOP_OPENVPN_OUTPUT = "OpenVpn session ended!";
 
     public OpenVpnResponse executeStart(String conversationId) {
